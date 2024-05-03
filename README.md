@@ -13,6 +13,11 @@
 - Primer entrem al entorn virtual**
  ```.venv\Scripts\activate```
 
+- Si no ho has sincronitzat abants utilitzem aquesta comanda:
+  ```git remote add origin https://github.com/PolFerret05/psychic-octo-sniffle.git```
+
+- Si ja ho has sincornitzat fem el següent:
+
 - Utilitzem aquesta comanda per pasar de Local a la area de probes:
   ```git add * ``` o ```git add <fitxers>```
 
@@ -22,4 +27,5 @@
 - Per acabar pasarem del repositori local al Github ho fem amb aquesta comanda:
 ```git push origin master```
 
-git remote add origin https://github.com/PolFerret05/psychic-octo-sniffle.git
+
+
