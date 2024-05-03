@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>La Vanguardia - <small>{{rss.feed.title}}</small></h1>
+    <img src="{{ rss.feed.image.url }}" alt="{{ rss.feed.image.title}}">
+    <p><a href="{{ rss.feed.image.link}}">{{ rss.feed.image.link}}</a></p>
     {% for item in rss.entries %}
         <p>
             <a href="{{item.link}}">{{item.title}}</a>
@@ -15,6 +17,11 @@
                 <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
             {% endfor %}
         </p>
+        <p> Descipcion noticia - {{item.description}}</p>
+        <p> Datos de creacion - {{item.published}}</p>
+        <p> Datos de modificacion - {{item.updated}}</p>
+        <p> Nombre del autor - {{item.author}}</p>
+        <p> Categoria - {{item.category}}</p>
     {% endfor %}
 </body>
 </html>
