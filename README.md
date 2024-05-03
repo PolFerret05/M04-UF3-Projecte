@@ -35,5 +35,8 @@ El primer que hem fet es modificar el fitxer "index.html" per que es pugui agafa
 <li><a href="/lavanguardia/cultura">Cultura</a></li>
 ```
 Les he afegit dintre de una llista en la cual estaven les altres categories.
+Comprovació pagina "index.html":
+
+![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/captura1.png)
 
 Després dins de la carpeta rss/lavanguardia he creat un fitxer xml per a cada categoria, els fitxer s'anumenen economia.xml i cultura.xml. Dins dels fitxers he copiat el contingut xml dels rss de la vanguardia.
