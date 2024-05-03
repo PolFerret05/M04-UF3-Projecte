@@ -10,7 +10,7 @@
  ```pip install -r requirements.txt```
 
 ##  Pugem tot al GitHub
-- Primer entrem al entorn virtual**
+- Primer entrem al entorn virtual
  ```.venv\Scripts\activate```
 
 - Si no ho has sincronitzat abants utilitzem aquesta comanda:
@@ -28,4 +28,12 @@
 ```git push origin master```
 
 
+# Interació 1:
+El primer que hem fet es modificar el fitxer "index.html" per que es pugui agafar dos categories més, ho he fet afegin aquestes linies:
+```html
+<li><a href="/lavanguardia/economia">Economia</a></li>
+<li><a href="/lavanguardia/cultura">Cultura</a></li>
+```
+Les he afegit dintre de una llista en la cual estaven les altres categories.
 
+Després dins de la carpeta rss/lavanguardia he creat un fitxer xml per a cada categoria, els fitxer s'anumenen economia.xml i cultura.xml. Dins dels fitxers he copiat el contingut xml dels rss de la vanguardia.
