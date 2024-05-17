@@ -6,3 +6,6 @@ img {
     width: 400px;
     height: auto;
 }
+.color {
+    background-color: rgb(154, 193, 250);
+}
