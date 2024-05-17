@@ -10,11 +10,17 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="container-fluid text-white bg-success p-5 text-center">
-        <h1>La Vanguardia - <small>{{rss.feed.title}}</small></h1>
-        <img src="{{ rss.feed.image.url }}" alt="{{ rss.feed.image.title}}">
-        <p><a href="{{ rss.feed.image.link}}">{{ rss.feed.image.link}}</a></p>
-    </div>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark sticky-top">
+        <div class="container-fluid text-white bg-success text-center">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <a href="{{ rss.feed.image.link}}"><img src="{{ rss.feed.image.url }}" alt="{{ rss.feed.image.title}}"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <h1 class="navbar-brand">La Vanguardia - <small>{{rss.feed.title}}</small></h1>
+            </div>
+            <a class="text-white"><u>Pol Ferret Crusat</u></a>
+        </div>
+    </nav>
     <div class="row">
     {% for item in rss.entries %}
         <div class="col-10 col-xxl-3 col-lg-4 border border-primary color">
