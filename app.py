@@ -78,6 +78,14 @@ def insert():
 def index():
     return render_template("index.html")
 
+@app.route('/indexlavanguardia')
+def indexlavanguardia():
+    return render_template("indexlavanguardia.html")
+
+@app.route('/indexelpuntavui')
+def indexelpuntavui():
+    return render_template("indexelpuntavui.html")
+
 @app.route('/lavanguardia/<seccio>')
 def lavanguardia(seccio):
     rss = get_rss_lavanguardia(seccio)
@@ -92,3 +100,20 @@ def get_rss_lavanguardia(seccio):
     
     rss = feedparser.parse(xml)
     return rss
+
+@app.route('/elpuntavui/<seccio>')
+def elpuntavui(seccio):
+    rss = get_rss_elpuntavui(seccio)
+    return render_template("elpuntavui.html", rss = rss)
+
+def get_rss_elpuntavui(seccio):
+    # MODE REMOT: versió on descarrega l'XML de la web
+    # xml = f"https://www.lavanguardia.com/rss/{seccio}.xml"
+    
+    # MODE LOCAL: versió que fa servir l'XML descarregat
+    xml = f"./rss/elpuntavui/{seccio}.xml"
+    
+    rss = feedparser.parse(xml)
+    return rss 
+    
+
