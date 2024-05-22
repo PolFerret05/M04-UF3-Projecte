@@ -104,6 +104,7 @@ def get_rss_lavanguardia(seccio):
 @app.route('/elpuntavui/<seccio>')
 def elpuntavui(seccio):
     rss = get_rss_elpuntavui(seccio)
+    print(rss.entries[0])
     return render_template("elpuntavui.html", rss = rss)
 
 def get_rss_elpuntavui(seccio):

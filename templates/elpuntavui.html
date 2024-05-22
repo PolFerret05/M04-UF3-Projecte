@@ -12,11 +12,28 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-success navbar-dark sticky-top">
         <div class="container-fluid text-white bg-success text-center">
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <a href="{{ rss.feed.image.link}}"><img src="{{ rss.feed.image.url }}" alt="{{ rss.feed.image.title}}"></a>
-            </div>
+           
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <h1 class="navbar-brand">El Punt Avui - <small>{{rss.feed.title}}</small></h1>
+            </div>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" href="/elpuntavui/deportes">Deportes</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/elpuntavui/politica">Política</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/elpuntavui/vida">Vida</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/elpuntavui/economia">Economia</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/elpuntavui/cultura">Cultura</a>
+                    </li>
+                </ul>
             </div>
             <a class="text-white"><u>Pol Ferret Crusat</u></a>
         </div>
@@ -26,9 +43,9 @@
         <div class="col-10 col-xxl-3 col-lg-4 border border-primary color">
         <p>
             <a href="{{item.link}}">{{item.title}}</a>
-            {% for media in item.media_content %}
-                <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
-            {% endfor %}
+          
+            <p><img src="{{item.enclosures[0].href}}" alt="{{item.title}}" /></p>
+           
         </p>
         <p> Descipcion noticia - {{item.description}}</p>
         <p> Datos de creacion - {{item.published}}</p>
