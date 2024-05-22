@@ -235,3 +235,6 @@ Modifiquem el codi afegin dos contenidors per que quedi tot ben estructurat
   {% endfor %}
 </div>
 ```
+Resultat: 
+
+![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/div-imatge.png)
