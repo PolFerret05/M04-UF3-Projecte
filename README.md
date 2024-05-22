@@ -101,3 +101,4 @@ Un cop acivat per fer la barra de navegació he utilitzat aquest codi:
   </div>
 </nav>
 ```
+![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/barra-navegacio.png)
