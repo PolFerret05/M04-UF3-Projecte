@@ -102,7 +102,7 @@ Un cop acivat per fer la barra de navegació he utilitzat aquest codi, la cual h
 </nav>
 ```
 Resultat:
-![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/barra-navegacio.png)
+![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/imatges-readme/barra-navegacio.png)
 
 ## Carousel
 Per fer el carousel he utilitzat un codi que he trobat a la pagina facilitada pel professorat que era el seguent:
@@ -237,7 +237,7 @@ Modifiquem el codi afegin dos contenidors per que quedi tot ben estructurat
 ```
 Resultat: 
 
-![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/div-imatge.png)
+![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/imatges-readme/div-imatge.png)
 
 # Extres:
 ## Afegir un altre diari
@@ -292,3 +292,45 @@ En el fitxer index.html he creat el seguent codi on hi ha el logo de cada diari 
 </html>
 ```
 Resultat:
+![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/imatges-readme/index.png)
+
+Despres din de la carpeta "rss" he creat una carpeta anomenada "elpuntavui", dins d'aquesta carpeta he creat 5 fitxers .xml de 5 categories diferents, en els que he posat el rss de cada categoria del diari.
+
+I despres he creat el fitxer elpuntavui.html en el cual he copiat el contingut del de la vanguardia modificant una linia per poder agafar la imatge, la linia es el seguent:
+```html
+<p><img src="{{item.enclosures[0].href}}" alt="{{item.title}}" /></p>
+```
+
+I per acabar he modificat el mes important que es el fitxer app.py, en el cual he afegit les seguents funcions:
+```python
+@app.route('/indexelpuntavui')
+def indexelpuntavui():
+    return render_template("indexelpuntavui.html")
+
+@app.route('/elpuntavui/<seccio>')
+def elpuntavui(seccio):
+    rss = get_rss_elpuntavui(seccio)
+    print(rss.entries[0])
+    return render_template("elpuntavui.html", rss = rss)
+
+def get_rss_elpuntavui(seccio):
+    # MODE REMOT: versió on descarrega l'XML de la web
+    # xml = f"https://www.lavanguardia.com/rss/{seccio}.xml"
+    
+    # MODE LOCAL: versió que fa servir l'XML descarregat
+    xml = f"./rss/elpuntavui/{seccio}.xml"
+    
+    rss = feedparser.parse(xml)
+    return rss 
+```
+
+## CSS extern
+En el css extern nomes he creat dos classes per posar un color diferent dels que et dona el boostrap de fons:
+```css
+.color {
+    background-color: rgb(154, 193, 250);
+}
+.color2 {
+    background-color: rgb(0, 217, 255);
+}
+```
