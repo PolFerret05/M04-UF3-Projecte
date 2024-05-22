@@ -37,7 +37,7 @@ El primer que hem fet es modificar el fitxer "index.html" per que es pugui agafa
 Les he afegit dintre de una llista en la cual estaven les altres categories.
 Comprovació pagina "index.html":
 
-![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/captura1.png)
+![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/imatges-readme/captura1.png)
 
 Després dins de la carpeta rss/lavanguardia he creat un fitxer xml per a cada categoria, els fitxer s'anumenen economia.xml i cultura.xml. Dins dels fitxers he copiat el contingut xml dels rss de la vanguardia.
 
@@ -238,3 +238,57 @@ Modifiquem el codi afegin dos contenidors per que quedi tot ben estructurat
 Resultat: 
 
 ![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/div-imatge.png)
+
+# Extres:
+## Afegir un altre diari
+El primer que he fet es cambiar el nom al fitxer que es deia index.html a lavanguardiaindex.html, i he creat els fitxers elpuntavuiindex.html i el index.html.
+
+En el fitxer elpuntavuiindex.html el que he fet es copiar el contingut del lavanguardiaindex.html i he cambiat els enllaços i el text per relacionar-ho amb el diari.
+
+En el fitxer index.html he creat el seguent codi on hi ha el logo de cada diari el cual et porta a la pagina personal de cada diari, el de la vanguardia et porta al fitxer lavanguardiaindex.html i el del punt avui al elpuntavuiindex.html:
+```html
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+      <!-- CSS del framework bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Diaris!</title>
+    <!-- <style>
+        .texto1 {
+            position:relative;
+        }
+    </style> -->
+    <body class="color">
+
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand">Diaris</a>
+        <a class="text-white"><u>Pol Ferret Crusat</u></a>
+      </div>
+    </nav>
+    <h1 class="text-center">Tria un dels dos diaris:</h1>
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="col-6 text-center border border-primary p-5">
+          <h1>La Vanguardia</h1>
+          <a href="/indexlavanguardia"><img src="/static/img/lavanguardia.png" alt="Logo de La Vanguardia"></a>
+        </div>
+        <div class="col-6 text-center border border-primary p-5 ">
+          <h1>El Punt Avui</h1>
+          <a href="/indexelpuntavui"><img src="/static/img/elpuntavui.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+
+     <!-- JavaScript del framework bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+</html>
+```
+Resultat:
