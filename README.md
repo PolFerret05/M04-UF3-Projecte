@@ -72,8 +72,8 @@ I aquesta al final del <body>:
      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
      crossorigin="anonymous"></script>
 ```
-
-Un cop acivat per fer la barra de navegació he utilitzat aquest codi:
+## Barra de navegació
+Un cop acivat per fer la barra de navegació he utilitzat aquest codi, la cual ha d'estar en totes les pagines:
 ```html
 <nav class="navbar navbar-expand-sm bg-success navbar-dark sticky-top"> <!-- Aqui he posat que la lletra sigui blanca, que el fons sigui verd, la mida-->
   <div class="container-fluid">
@@ -101,4 +101,140 @@ Un cop acivat per fer la barra de navegació he utilitzat aquest codi:
   </div>
 </nav>
 ```
+Resultat:
 ![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/barra-navegacio.png)
+
+## Carousel
+Per fer el carousel he utilitzat un codi que he trobat a la pagina facilitada pel professorat que era el seguent:
+```html
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+```
+El qual he modificat per que quedes com a mi m'interesava, he posat amb comentaris les modificacions:
+```html
+<div class="conitner">
+      <div class="row"> <!-- Aqui faig que divideixi l'ample de la pantalla en 12 columnes-->
+        <div class="col-2"></div> <!-- Aqui faig que agafi 2 de les 12 columnes per que estiguin amb blanc-->
+        <div class="col"> <!-- Aqui faig que el carousel estigui dins de les columnes restants-->
+           <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div>
+                        <img src="/static/img/deportes.jpg"  class="d-block w-100" alt="Imagen del girona clasificado a la Champions League">
+                    </div>
+                    <div class="text-center d-none d-md-block text-black mt-5"> <!-- He modificat el "class" perque el text estigui fira de la imatge i configuracions del text, aixo en tots els textos del carousel-->
+                      <h5>Girona a Champions</h5>
+                      <p>El Girona FC se clasifica a la proxima edicion de la UEFA Champions League tras ganar al Barça 4-2.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/static/img/politica.jpg" class="d-block w-100" alt="Pedro Sánchez en Vilanova i la Geltrú">
+                    <div class="text-center d-none d-md-block text-black mt-5">
+                      <h5>Pedro Sánchez en Vilanova i la Geltrú</h5>
+                      <p>Pedro Sánchez estuvo en Vilanova i la Geltrú participando en el miting del partido catalan PSC.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/static/img/vida.jpeg" class="d-block w-100" alt="Dani Alves sale de la carcel">
+                    <div class="text-center d-none d-md-block text-black mt-5">
+                      <h5>Dani Alves sale de la carcel</h5>
+                      <p>Dani Alves sale de la carcel</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/static/img/economia.jpeg" class="d-block w-100" alt="El paro sube">
+                    <div class="text-center d-none d-md-block text-black mt-5">
+                      <h5>El paro sube</h5>
+                      <p> El índice de paro sube al 3,9%, pero bate un récord de cinco décadas al mantenerse 27 meses por debajo del 4%</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/static/img/cultura.jpeg" class="d-block w-100" alt="Nuevo ministro de cultura">
+                    <div class="text-center d-none d-md-block text-black mt-5">
+                      <h5>Nuevo ministro de cultura</h5>
+                      <p> La Conselleria de Cultura, en manos de Vox, se adhiere a la propuesta de Extremadura “para proteger la existencia de este galardón” mientras acusa al Gobierno de ”sectarismo político"</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+          </div>
+        </div>
+    <div class="col-2"></div><!-- Aqui faig que agafi 2 de les 12 columnes per que estiguin amb blanc i que el carousel estigui en el centre-->
+    </div>
+    </div>
+```
+
+## Modificació del arxiu lavanguardia.html
+Modifiquem el codi afegin dos contenidors per que quedi tot ben estructurat
+```html
+<div class="row"> <!-- Aquest contenidor el que fa es estructurar tots els contenidors-->
+  {% for item in rss.entries %}
+    <div class="col-10 col-xxl-3 col-lg-4 border border-primary color"><!-- Aquest contenidor el que fa es posar la noticia en un contenidor amb bordes de color blau, i al estar dins del for(bucle) es repetira cada cop que es fagi, aixi totes les noticies ho tindran-->
+      <p>
+          <a href="{{item.link}}">{{item.title}}</a>
+          {% for media in item.media_content %}
+              <p><img src="{{media.url}}" alt="{{item.title}}" /></p>
+          {% endfor %}
+      </p>
+      <p> Descipcion noticia - {{item.description}}</p>
+      <p> Datos de creacion - {{item.published}}</p>
+      <p> Datos de modificacion - {{item.updated}}</p>
+      <p> Nombre del autor - {{item.author}}</p>
+      <p> Categoria - {{item.category}}</p>
+    </div>
+  {% endfor %}
+</div>
+```
+Resultat: 
+
+![lsala](https://github.com/PolFerret05/psychic-octo-sniffle/blob/master/div-imatge.png)
